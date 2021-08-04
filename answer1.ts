@@ -1,17 +1,18 @@
 
 const isSubset = (arr1: any[], arr2: any[]): boolean => {
     try {
-        let hash1: string = arr1.join(``)
-        let hash2: string = arr2.join(``)
+        const hash1: string = arr1.join(``)
+        const hash2: string = arr2.join(``)
 
         // empty is not subset
         if (hash1.length === 0 || hash2.length === 0) {
             return false
         }
 
-        let hashIndex1 = hash1.indexOf(hash2)
-        let hashIndex2 = hash2.indexOf(hash1)
+        const hashIndex1 = hash1.indexOf(hash2)
+        const hashIndex2 = hash2.indexOf(hash1)
 
+        // check type
         if(hashIndex1 > -1) {
             for(let i=hashIndex1; i<arr1.length; i++) {
                 let i2 = i - hashIndex1
