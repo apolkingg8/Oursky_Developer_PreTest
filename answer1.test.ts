@@ -6,15 +6,12 @@ describe("answer1", ()=> {
 
     test("isSubset()", async ()=> {
         expect(isSubset([], [])).toEqual(false)
-        expect(isSubset([1, 2, 3], [])).toEqual(false)
-        expect(isSubset([], [1, 2, 2])).toEqual(false)
+        expect(isSubset([`A`, `B`, `C`], [])).toEqual(false)
+        expect(isSubset([], [`1`, `2`, `2`])).toEqual(false)
 
-        expect(isSubset([1, 2, 3], [2, 3])).toEqual(true)
-        expect(isSubset([2, 3], [1, 2, 3])).toEqual(true)
-        expect(isSubset([2, 3], [3, 4])).toEqual(false)
-
-        expect(isSubset([1, `2`, 3], [2, 3])).toEqual(false)
-        expect(isSubset([2, 3], [1, `2`, 3])).toEqual(false)
+        expect(isSubset([`A`, `B`, `C`], [`B`, `C`])).toEqual(true)
+        expect(isSubset([`B`, `C`], [`A`, `B`, `C`])).toEqual(true)
+        expect(isSubset([`B`, `C`], [`C`, `D`])).toEqual(false)
     })
 
     test("isSubset() bad input", async ()=> {

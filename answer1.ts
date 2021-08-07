@@ -1,5 +1,5 @@
 
-const isSubset = (arr1: any[], arr2: any[]): boolean => {
+const isSubset = (arr1: string[], arr2: string[]): boolean => {
     try {
         const hash1: string = arr1.join(``)
         const hash2: string = arr2.join(``)
@@ -9,35 +9,8 @@ const isSubset = (arr1: any[], arr2: any[]): boolean => {
             return false
         }
 
-        const hashIndex1 = hash1.indexOf(hash2)
-        const hashIndex2 = hash2.indexOf(hash1)
-
-        // check type
-        if(hashIndex1 > -1) {
-            for(let i=hashIndex1; i<arr1.length; i++) {
-                let i2 = i - hashIndex1
-
-                if(arr1[i] !== arr2[i2]) {
-                    return false
-                }
-            }
-
-            return true
-        }
-
-        if(hashIndex2 > -1) {
-            for(let i=hashIndex2; i<arr2.length; i++) {
-                let i1 = i - hashIndex2
-
-                if(arr1[i1] !== arr2[i]) {
-                    return false
-                }
-            }
-
-            return true
-        }
-
-        return false
+        return hash1.indexOf(hash2) > -1
+            || hash2.indexOf(hash1) > -1
     } catch (err) {
         console.error(err)
         return false
