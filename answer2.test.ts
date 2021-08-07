@@ -2,6 +2,8 @@ import {Cache, CacheStore} from "./answer2";
 
 describe("answer2", ()=> {
 
+    // time complex is O(n)
+
     test("put()", ()=> {
         let cacheStore = new CacheStore()
         let cache1 = new Cache({key: `c1`, val: `c1`, weight: 100})

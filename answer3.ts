@@ -1,5 +1,5 @@
 
-let foo = ()=> {
+let foo = (n: number, cur: number)=> {
 
 }
 
